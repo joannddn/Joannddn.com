@@ -4,13 +4,7 @@ import Logo from './assets/Logo.png'
 import { Icon } from '@iconify/react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('Software')
-  const [activeProjectTab, setActiveProjectTab] = useState('Software')
-  const [currentProjectIndex, setCurrentProjectIndex] = useState({
-    'Software': 0,
-    'Graphic Design': 0,
-    'Others': 0
-  })
+  const [activeTab, setActiveTab] = useState('Software');
 
   const skillsData = {
     Software: [
@@ -52,139 +46,6 @@ function App() {
     ]
   };
 
-  const projectsData = {
-    'Software': [
-      {
-        title: 'SVGL - A beautiful library with SVG logos',
-        description: 'Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.',
-        technologies: ['Next.js', 'Tailwind CSS'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'AdventJS - Retos de programación con JavaScript y TypeScript',
-        description: 'Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.',
-        technologies: ['Next.js', 'Tailwind CSS'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'Portfolio Personal',
-        description: 'Mi portfolio personal desarrollado con React y CSS moderno.',
-        technologies: ['React', 'CSS'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'E-commerce Platform',
-        description: 'Plataforma de comercio electrónico completa con carrito de compras.',
-        technologies: ['React', 'Node.js'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      }
-    ],
-    'Graphic Design': [
-      {
-        title: 'Brand Identity Design',
-        description: 'Diseño de identidad corporativa completa para startup tecnológica.',
-        technologies: ['Photoshop', 'Illustrator'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'Social Media Campaign',
-        description: 'Campaña visual para redes sociales con más de 100K impresiones.',
-        technologies: ['After Effects', 'Photoshop'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'Print Design Collection',
-        description: 'Colección de diseños para material impreso y merchandising.',
-        technologies: ['Illustrator', 'Photoshop'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'UI/UX Design System',
-        description: 'Sistema de diseño completo para aplicación móvil.',
-        technologies: ['Figma', 'Photoshop'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      }
-    ],
-    'Others': [
-      {
-        title: 'Content Creation Strategy',
-        description: 'Estrategia de contenido que aumentó el engagement en 300%.',
-        technologies: ['Content Strategy', 'Analytics'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'Technical Documentation',
-        description: 'Documentación técnica completa para equipo de desarrollo.',
-        technologies: ['Technical Writing', 'Documentation'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'Process Automation',
-        description: 'Automatización de procesos que redujo tiempo de trabajo en 50%.',
-        technologies: ['Automation', 'Process Design'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      },
-      {
-        title: 'Training Program',
-        description: 'Programa de capacitación técnica para equipo de soporte.',
-        technologies: ['Training', 'Technical Support'],
-        image: '/api/placeholder/400/200',
-        codeUrl: '#',
-        previewUrl: '#'
-      }
-    ]
-  };
-
-  const nextProjects = () => {
-    const maxIndex = Math.max(0, projectsData[activeProjectTab].length - 2);
-    setCurrentProjectIndex(prev => ({
-      ...prev,
-      [activeProjectTab]: Math.min(prev[activeProjectTab] + 2, maxIndex)
-    }));
-  };
-
-  const prevProjects = () => {
-    setCurrentProjectIndex(prev => ({
-      ...prev,
-      [activeProjectTab]: Math.max(prev[activeProjectTab] - 2, 0)
-    }));
-  };
-
-  const handleTabChange = (tab) => {
-    setActiveProjectTab(tab);
-    setCurrentProjectIndex(prev => ({ ...prev, [tab]: 0 }));
-  };
-
-  const getCurrentProjects = () => {
-    const startIndex = currentProjectIndex[activeProjectTab];
-    return projectsData[activeProjectTab].slice(startIndex, startIndex + 2);
-  };
-
-  const canGoPrev = currentProjectIndex[activeProjectTab] > 0;
-  const canGoNext = currentProjectIndex[activeProjectTab] < projectsData[activeProjectTab].length - 2;
-
   return (
     <div className="hero-root">
       {/* Header */}
@@ -199,7 +60,6 @@ function App() {
           <a href="#">Contact</a>
         </nav>
       </header>
-
       {/* Hero Content */}
       <section className="hero-content">
         <div className="hero-left">
@@ -214,10 +74,11 @@ function App() {
         <div className="hero-right">
           <div className="hero-image-outline">
             {/* Place your image here in the future */}
+            {/* <img src="your-image.jpg" alt="Joann Díaz" /> */}
+            {/* Optionally add X elements here for decoration */}
           </div>
         </div>
       </section>
-
       {/* About + Skills Section */}
       <section className="about-skills-section">
         <div className="about-skills-container">
@@ -231,20 +92,24 @@ function App() {
             <div className='about-me-strengths'>
               <p>#Creative</p>
               <p>#Technical</p>
-              <p>#Innovative</p>
+              <p>#Adaptable </p>
+              <p>#Collaborative Team Player</p>
+              <p>#Eagerness to Learn</p>
+              <p>#Problem Solver</p>
+              <p>#Passionate </p>
             </div>
           </div>
-
           {/* Skills with Tabs */}
-          <div className="skills-content">
-            <h2>Skills</h2>
+          <div className="skills">
+            <h2 className="section-title">Skills</h2>
+            
             {/* Tab Navigation */}
             <div className="skills-tabs">
               <button 
                 className={`tab-button ${activeTab === 'Software' ? 'active' : ''}`}
                 onClick={() => setActiveTab('Software')}
               >
-                Software
+                Software Developer
               </button>
               <button 
                 className={`tab-button ${activeTab === 'Graphic Design' ? 'active' : ''}`}
@@ -259,180 +124,130 @@ function App() {
                 Others
               </button>
             </div>
-
+            
             {/* Skills Content */}
-            <div className="skills-grid">
-              {skillsData[activeTab].map((skill, index) => (
-                <div key={index} className={`skill-card ${activeTab === 'Graphic Design' ? 'design' : activeTab === 'Others' ? 'others small' : 'dev'}`}>
-                  <Icon icon={skill.icon} className="skill-icon" />
-                  <p className="skill-name">{skill.name}</p>
-                </div>
-              ))}
+            <div className="skills-content">
+              <div className="skills-grid">
+                {skillsData[activeTab].map((skill, index) => (
+                  <div key={index} className={`skill-card ${activeTab.toLowerCase().replace(' ', '')}`}>
+                    <div className="skill-icon">
+                      <Icon icon={skill.icon} width="40" height="40" />
+                    </div>
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Experience & Education Section */}
       <section className="experience-education-section">
         <div className="experience-education-container">
           {/* Experience */}
           <div className="experience">
-            <h2>Experiencia Laboral</h2>
+            <h2 className="section-title">Experiencia Laboral</h2>
             <div className="timeline">
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>Web & Graphic Designer</h3>
-                  <p className="company">Freelance</p>
-                  <p className="date">2022 - Present</p>
-                  <p>Desarrollo de sitios web responsivos y diseño de identidades visuales para diversos clientes. Especialización en WordPress, Shopify y diseño gráfico.</p>
-                  <button className="learn-more">Learn More</button>
+                  <h3 className="job-title">Web & Graphic Designer</h3>
+                  <h4 className="company">Moonshiip — Colorado, US</h4>
+                  <p className="date">2023 – 2025</p>
+                  <p className="description">
+                    Designed and developed websites for small and medium-sized businesses using WordPress and other tools.
+                    <br/><br/>
+                    Created visual content and managed social media accounts for various clients and brands.
+                    <br/><br/>
+                    Oversaw advertising campaigns, ensuring consistent content delivery and optimized brand visibility across platforms.
+                  </p>
                 </div>
               </div>
               
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>Freelance Web Designer</h3>
-                  <p className="company">Independent</p>
-                  <p className="date">2021 - 2022</p>
-                  <p>Creación de sitios web personalizados y optimización SEO. Trabajo con clientes locales e internacionales.</p>
-                  <button className="learn-more">Learn More</button>
+                  <h3 className="job-title">Freelance Web Designer</h3>
+                  <h4 className="company">Remote — Venezuela</h4>
+                  <p className="date">2020 – 2022</p>
+                  <p className="description">
+                    Built responsive websites for small and medium-sized businesses using WordPress.
+                    <br/><br/>
+                    Collaborated with clients to understand their needs and deliver customized digital solutions.
+                  </p>
                 </div>
               </div>
               
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>Onsite Technical Support Specialist</h3>
-                  <p className="company">Various Companies</p>
-                  <p className="date">2020 - 2021</p>
-                  <p>Soporte técnico especializado en hardware y software. Resolución de problemas complejos y mantenimiento de sistemas.</p>
-                  <button className="learn-more">Learn More</button>
+                  <h3 className="job-title">Onsite Technical Support Specialist</h3>
+                  <h4 className="company">DataWise — Argentina</h4>
+                  <p className="date">2019 – 2020</p>
+                  <p className="description">
+                    Provided onsite technical support, including hardware installation, configuration, and maintenance.
+                    <br/><br/>
+                    Troubleshot and resolved technical issues to reduce system downtime and improve productivity.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-
+          
           {/* Education */}
           <div className="education">
-            <h2>Estudios</h2>
+            <h2 className="section-title">Estudios</h2>
             <div className="timeline">
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>Técnico en Informática</h3>
-                  <p className="company">Instituto Tecnológico</p>
-                  <p className="date">2018 - 2020</p>
+                  <h3 className="job-title">Web Development School</h3>
+                  <h4 className="company">Platzi (Online)</h4>
+                  <p className="date">2023 – Present</p>
                 </div>
               </div>
               
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>Bachillerato en Ciencias</h3>
-                  <p className="company">Colegio Nacional</p>
-                  <p className="date">2015 - 2018</p>
+                  <h3 className="job-title">English Academy</h3>
+                  <h4 className="company">Platzi (Online)</h4>
+                  <p className="date">2023 – Present</p>
                 </div>
               </div>
               
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>Certificación en Diseño Gráfico</h3>
-                  <p className="company">Academia de Artes Digitales</p>
-                  <p className="date">2019</p>
+                  <h3 className="job-title">Graphic Design School</h3>
+                  <h4 className="company">Platzi (Online)</h4>
+                  <p className="date">2020 – 2022</p>
+                </div>
+              </div>
+              
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h3 className="job-title">Bachelor of Arts in Graphic Design</h3>
+                  <h4 className="company">Arturo Michelena University — Venezuela</h4>
+                  <p className="date">2016 – 2018</p>
+                </div>
+              </div>
+              
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h3 className="job-title">High School Diploma – Science Focus</h3>
+                  <h4 className="company">El Santuario Educational Unit — Venezuela</h4>
+                  <p className="date">2012 – 2016</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-        <section className="projects-section">
-          {/* Projects Section */}
-          <div className="projects-container">
-            <h2 className="section-title">Proyectos</h2>
-            
-            {/* Projects Tabs */}
-            <div className="projects-tabs">
-              <button 
-                className={`tab-button ${activeProjectTab === 'Software' ? 'active' : ''}`}
-                onClick={() => handleTabChange('Software')}
-              >
-                Software
-              </button>
-              <button 
-                className={`tab-button ${activeProjectTab === 'Graphic Design' ? 'active' : ''}`}
-                onClick={() => handleTabChange('Graphic Design')}
-              >
-                Graphic Design
-              </button>
-              <button 
-                className={`tab-button ${activeProjectTab === 'Others' ? 'active' : ''}`}
-                onClick={() => handleTabChange('Others')}
-              >
-                Others
-              </button>
-            </div>
-
-            {/* Projects Content with Carousel */}
-            <div className="projects-carousel">
-              {/* Previous Button */}
-              <button 
-                className={`carousel-nav prev ${!canGoPrev ? 'disabled' : ''}`}
-                onClick={prevProjects}
-                disabled={!canGoPrev}
-              >
-              </button>
-
-              {/* Projects Grid */}
-              <div className="projects-grid">
-                {getCurrentProjects().map((project, index) => (
-                  <div key={index} className="project-card">
-                    <img src={project.image} alt={project.title} className="project-image" />
-                    <div className="project-info">
-                      <h3 className="project-title">{project.title}</h3>
-                      <p className="project-description">{project.description}</p>
-                      <div className="project-technologies">
-                        {project.technologies.map((tech, techIndex) => (
-                          <span key={techIndex} className="tech-tag">{tech}</span>
-                        ))}
-                      </div>
-                      <div className="project-buttons">
-                        <a href={project.codeUrl} className="project-btn btn-code">Code</a>
-                        <a href={project.previewUrl} className="project-btn btn-preview">Preview</a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Next Button */}
-              <button 
-                className={`carousel-nav next ${!canGoNext ? 'disabled' : ''}`}
-                onClick={nextProjects}
-                disabled={!canGoNext}
-              >
-                
-              </button>
-            </div>
-
-            {/* Indicators */}
-            <div className="carousel-indicators">
-              {Array.from({ length: Math.ceil(projectsData[activeProjectTab].length / 2) }).map((_, index) => (
-                <button
-                  key={index}
-                  className={`indicator ${currentProjectIndex[activeProjectTab] === index * 2 ? 'active' : ''}`}
-                  onClick={() => setCurrentProjectIndex(prev => ({ ...prev, [activeProjectTab]: index * 2 }))}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
-    )
+    </div>
+  )
 }
 
 export default App
