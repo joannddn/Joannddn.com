@@ -35,6 +35,7 @@ function App() {
       { icon: 'logos:microsoft-windows', name: 'Windows' },
       { icon: 'logos:linux-tux', name: 'Linux' },
       { icon: 'logos:microsoft-icon', name: 'Microsoft Office' },
+      { icon: 'devicon:slack', name: 'Slack' },
       { icon: 'material-symbols:content-copy', name: 'Content Creation' },
       { icon: 'flat-color-icons:support', name: 'Technical Support' },
       { icon: 'simple-icons:openai', name: 'ChatGPT' },

@@ -597,16 +597,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* Others category styling */
-.skill-card.others {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 8px 1px #ff6b6b44;
-}
-
-.skill-card.others .skill-icon {
-  color: #ff6b6b;
-}
-
 /* Responsive adjustments for tabs */
 @media (max-width: 600px) {
   .skills-tabs {
